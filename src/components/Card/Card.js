@@ -1,5 +1,6 @@
 import React from 'react';
 import './Card.css';
+import Donate from './add.svg'
 
 
 const card = props => (
@@ -13,9 +14,12 @@ const card = props => (
 
       <form>
       <h1>$</h1>
-        <input title="dollar"
+        <input
+        title="dollar"
         type = "number"
-        maxlength = "6" step="0.01" placeholder="0.00"/>
+        step="0.01"
+        placeholder="0.00"/>
+        <img src={Donate}/>
       </form>
     </div>
   </div>

@@ -4,7 +4,7 @@ import Card from '../Card/Card';
 
 
 const grid = props => (
-    <div ClassName="outer-grid" >
+    <div className="outer-grid" >
     <h1 className="grid-title">Trending</h1>
     <div className="grid">
       <Card/>
