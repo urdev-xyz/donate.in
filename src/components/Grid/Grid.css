@@ -1,0 +1,13 @@
+.grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+}
+.outer-grid {
+  padding: 20px;
+
+}
+.grid-title {
+  font-family: 'Nunito', sans-serif;
+}
