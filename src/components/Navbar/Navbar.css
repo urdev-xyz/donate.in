@@ -1,4 +1,5 @@
 .navbar {
+  z-index: ;
   background-color: var(--black);
   display: flex;
   height: 60px;
@@ -9,7 +10,7 @@
   align-self: center;
 }
 .logo a{
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 900;
   text-decoration: none;
   color: var(--white);
