@@ -9,7 +9,7 @@ class grid extends React.Component{
     generateCard = (foundations) => {
       let cards = [];
       for (var i = 0;i < foundations.length; i++) {
-        cards.push(<Card name={foundations[i].name} desc={foundations[i].desc}/>);
+        cards.push(<Card name={foundations[i].name} desc={foundations[i].desc} addDonation={this.props.addDonation}/>);
       }
       return cards
     };
