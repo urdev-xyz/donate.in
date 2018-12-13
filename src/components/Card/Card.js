@@ -17,11 +17,20 @@ class card extends React.Component {
   }
 
   handleSubmit(event){
-    if (this.state.donation === undefined || this.state.donation === 0) {
+    if (this.state.donation === undefined || this.state.donation == 0) {
       event.preventDefault();
     }else{
-      alert('You Donated: $' + this.state.donation);
-      event.preventDefault();
+      if (sessionStorage.getItem('shoppingCartData') == undefined) {
+        sessionStorage.setItem('shoppingCartData', JSON.stringify([]));
+      }
+      let workingData = JSON.parse(sessionStorage.getItem('shoppingCartData'));
+      workingData.push({
+        orgName: this.props.name,
+        donationAmmount: this.state.donation,
+      })
+      sessionStorage.setItem('shoppingCartData', JSON.stringify(workingData));
+      console.log(JSON.parse(sessionStorage.getItem('shoppingCartData')))
+      event.preventDefault()
     }
   }
     render() {
@@ -43,7 +52,7 @@ class card extends React.Component {
             step="0.01"
             placeholder="0.00"/>
             <button type="submit" >
-            <img src={Donate} alt="submit donation" onClick={this.props.addDonation('Python', '12')}/>
+            <img src={Donate} alt="submit donation"/>
             </button>
           </form>
         </div>

@@ -35,12 +35,6 @@ class App extends Component {
     document.title = "donate.in"
   }
 
-  addDonation(foundationName, donationPrice) {
-    let newItem = {name: foundationName, price: donationPrice}
-    shoppingCart.push(newItem);
-    console.log(shoppingCart)
-  }
-
   render() {
     return (
       <div className="App">
