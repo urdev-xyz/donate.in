@@ -17,7 +17,7 @@ class Donation extends React.Component{
         <h1>{this.props.name}</h1>
       </div>
       <div className="donation-cost">
-        <h1>$12</h1>
+        <h1>${this.props.donation}</h1>
       </div>
     </div>
   )
@@ -27,12 +27,16 @@ class Donation extends React.Component{
 class Checkout extends React.Component {
     constructor(props){
       super(props);
-      console.log(this.props)
     }
     generateCart = (shoppingCart) => {
       let cards = [];
-      for (var i = 0;i < shoppingCart.length; i++) {
-        cards.push(<Donation name={shoppingCart[i].name}/>);
+      if (shoppingCart == undefined) {
+
+      } else {
+        console.log(shoppingCart[0])
+        for (var i = 0;i < shoppingCart.length; i++) {
+          cards.push(<Donation donation={shoppingCart[i].donationAmmount} name={shoppingCart[i].orgName}/>);
+        }
       }
       return cards
     };
@@ -40,7 +44,7 @@ class Checkout extends React.Component {
       return(
         <div className="checkout">
           <h1>Donations -</h1>
-          {this.generateCart(this.props.shoppingCart)}
+          {this.generateCart(JSON.parse(sessionStorage.getItem('shoppingCartData')))}
           <div className="checkout-total">
             <h1> Total: $12 </h1>
             <button>Checkout</button>

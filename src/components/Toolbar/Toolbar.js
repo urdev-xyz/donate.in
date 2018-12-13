@@ -8,9 +8,7 @@ import Checkout from '../Checkout/Checkout';
 class toolbar extends React.Component {
       constructor(props){
         super(props);
-        console.log(this.props)
         let local = this.props.shoppingCart;
-        console.log(this.props.shoppingCart)
       }
 
       render(){

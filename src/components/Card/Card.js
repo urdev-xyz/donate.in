@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.css';
+import { updateCart } from '../Grid/Grid'
 import Donate from './add.svg'
-
 
 class card extends React.Component {
   constructor(props) {
@@ -30,6 +30,7 @@ class card extends React.Component {
       })
       sessionStorage.setItem('shoppingCartData', JSON.stringify(workingData));
       console.log(JSON.parse(sessionStorage.getItem('shoppingCartData')))
+      updateCart();
       event.preventDefault()
     }
   }

@@ -2,7 +2,9 @@ import React from 'react';
 import './Grid.css';
 import Card from '../Card/Card';
 
-
+export function updateCart() {
+  this.setState()
+}
 
 class grid extends React.Component{
 
