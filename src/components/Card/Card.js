@@ -3,6 +3,8 @@ import './Card.css';
 import { updateCart } from '../Grid/Grid'
 import Donate from './add.svg'
 
+
+
 class card extends React.Component {
   constructor(props) {
     super(props);
@@ -37,7 +39,7 @@ class card extends React.Component {
     render() {
       return(
       <div key={this.props.name } className="card">
-        <div className="image"></div>
+        <div className="image" style={this.props.color}></div>
         <div className="content">
           <h1 className="org">{this.props.name}</h1>
           <h2 className="org-info">{this.props.desc}</h2>

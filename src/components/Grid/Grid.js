@@ -11,7 +11,12 @@ class grid extends React.Component{
     generateCard = (foundations) => {
       let cards = [];
       for (var i = 0;i < foundations.length; i++) {
-        cards.push(<Card name={foundations[i].name} desc={foundations[i].desc} addDonation={this.props.addDonation}/>);
+        //!!!!!!!!!!THIS IS FOR UI TESTING ONLY!!!!!!!!!!!!!!!
+        let randImgColor = {
+            backgroundColor: '#' + Math.floor(Math.random()*16777215).toString(16),
+          };
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        cards.push(<Card color={randImgColor} name={foundations[i].name} desc={foundations[i].desc} addDonation={this.props.addDonation}/>);
       }
       return cards
     };
